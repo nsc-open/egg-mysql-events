@@ -20,9 +20,7 @@
 [download-image]: https://img.shields.io/npm/dm/egg-mysql-events.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-mysql-events
 
-<!--
-Description here.
--->
+This is an egg plugin based on https://www.npmjs.com/package/@rodrigogs/mysql-events
 
 ## Install
 
@@ -44,8 +42,19 @@ exports.mysqlEvents = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.mysqlEvents = {
-};
+exports.mysqlEvents = config.mysqlEvents = [{
+  connection: {
+    host: '127.0.0.1',
+    port: 3306,
+    user: 'mysql-user',
+    password: 'password'
+  },
+  triggers: [{
+    name: 'TEST',
+    expression: 'db.t_projects',
+    onEvent: ({ event, app }) => console.log(event, app)
+  }]
+}]
 ```
 
 see [config/config.default.js](config/config.default.js) for more detail.
