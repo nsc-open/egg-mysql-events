@@ -1,6 +1,6 @@
 {
   "name": "egg-mysql-events",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "eggPlugin": {
     "name": "mysqlEvents"
@@ -40,6 +40,7 @@
     "app.js",
     "agent.js",
     "config",
+    "lib",
     "app"
   ],
   "ci": {
